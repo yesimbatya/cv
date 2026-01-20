@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yessimkhan Seidikarim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.light-mode {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        body.light-mode nav {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .logo {
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        body.light-mode .nav-links a {
+            color: #666;
+        }
+
+        body.light-mode .nav-links a:hover {
+            color: #1a1a1a;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid #333;
+            color: #999;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            border-color: #666;
+            color: #fff;
+        }
+
+        body.light-mode .theme-toggle {
+            border-color: #ccc;
+            color: #666;
+        }
+
+        body.light-mode .theme-toggle:hover {
+            border-color: #999;
+            color: #1a1a1a;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 8rem 0 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 0;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #888;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .subtitle {
+            color: #666;
+        }
+
+        .description {
+            font-size: 1.05rem;
+            color: #999;
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .description {
+            color: #555;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #333;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .contact-links a:hover {
+            border-color: #666;
+            background: #111;
+        }
+
+        body.light-mode .contact-links a {
+            color: #1a1a1a;
+            border-color: #ccc;
+        }
+
+        body.light-mode .contact-links a:hover {
+            border-color: #999;
+            background: #f5f5f5;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #1a1a1a;
+            transition: border-color 0.3s;
+        }
+
+        body.light-mode .experience-item,
+        body.light-mode .education-item,
+        body.light-mode .project-item {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child, .education-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .item-title {
+            color: #1a1a1a;
+        }
+
+        .item-date {
+            color: #666;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .item-date {
+            color: #999;
+        }
+
+        .item-company {
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .item-company {
+            color: #666;
+        }
+
+        .item-description {
+            color: #999;
+            line-height: 1.8;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .item-description {
+            color: #555;
+        }
+
+        .item-description li {
+            margin-bottom: 0.5rem;
+            margin-left: 1.2rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #151515;
+            color: #aaa;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid #222;
+            transition: all 0.3s;
+        }
+
+        body.light-mode .tech-tag {
+            background: #f5f5f5;
+            color: #666;
+            border: 1px solid #e0e0e0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .skill-category h3 {
+            color: #1a1a1a;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            color: #999;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .skill-category li {
+            color: #555;
+        }
+
+        .skill-category li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        body.light-mode .skill-category li:before {
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #444;
+            font-size: 0.85rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Yessimkhan Seidikarim</div>
+            <ul class="nav-links">
+                <li><a onclick="scrollToSection('about')">About</a></li>
+                <li><a onclick="scrollToSection('experience')">Experience</a></li>
+                <li><a onclick="scrollToSection('projects')">Projects</a></li>
+                <li><a onclick="scrollToSection('contact')">Contact</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="hero">
+        <div class="container">
+            <h1>Building solutions at the intersection of business & technology</h1>
+            <p class="subtitle">BCom Computer Science & Business @ UBC</p>
+            <p class="description">
+                From analyzing financial statements at Bank of Development to building AI-powered applications, 
+                I bridge technical expertise with business acumen to solve complex problems. Currently exploring 
+                quantitative economics and data-driven decision making.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:yessimkhan.seidikarim@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/yessimkhan" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yessimkhan" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓ Scroll to explore</div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Credit Analysis Intern</div>
+                    <div class="item-date">Jun 2025 – Aug 2025</div>
+                </div>
+                <div class="item-company">Bank of Development • Astana, Kazakhstan</div>
+                <ul class="item-description">
+                    <li>Analyzed financial statements and credit applications for loan requests, assessing creditworthiness and risk factors to support lending decisions</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">IT Intern</div>
+                    <div class="item-date">May 2025 – Jun 2025</div>
+                </div>
+                <div class="item-company">Viterra Kazakhstan • Astana, Kazakhstan</div>
+                <ul class="item-description">
+                    <li>Reviewed business logic and technical documentation for automation of content approval system built on Microsoft Power Platform</li>
+                    <li>Developed automation solutions for data extraction processes, streamlining manual data collection tasks and improving operational efficiency</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Full Stack Development Apprenticeship</div>
+                    <div class="item-date">Jun 2024 – Aug 2024</div>
+                </div>
+                <div class="item-company">Nfactorial • Almaty, Kazakhstan</div>
+                <ul class="item-description">
+                    <li>Outperformed 2,970 candidates in three-stage technical assessment (2.7% acceptance rate)</li>
+                    <li>Developed AI-powered financial assistant for personal finance management using machine learning techniques</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Assistant to Director of Growth</div>
+                    <div class="item-date">Jun 2022 – Sep 2022</div>
+                </div>
+                <div class="item-company">Health Project • Astana, Kazakhstan</div>
+                <ul class="item-description">
+                    <li>Tracked operations across 10+ coffee shops using comprehensive data management system with advanced Excel and statistical analysis</li>
+                    <li>Identified 3 high-potential expansion locations through quantitative market research and competitor analysis</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Quantitative Economics</div>
+                    <div class="item-date">2025 – Present</div>
+                </div>
+                <p class="item-description">
+                    Comprehensive data science curriculum covering economic modeling, statistical analysis, and machine learning applications. 
+                    Implemented data cleaning techniques on large economic datasets and created interactive visualizations to analyze trends.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">pandas</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">matplotlib</span>
+                    <span class="tech-tag">Jupyter</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Productivity Timer</div>
+                    <div class="item-date">Sep 2024 – Dec 2024</div>
+                </div>
+                <p class="item-description">
+                    Developed productivity tracking application with robust data persistence and intuitive GUI featuring interactive charts 
+                    for visualizing productivity metrics and category-based analytics.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Swing</span>
+                    <span class="tech-tag">JUnit</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Finova AI</div>
+                    <div class="item-date">Jun 2024 – Aug 2024</div>
+                </div>
+                <p class="item-description">
+                    AI-powered financial assistant with optimized database performance (40% improvement) through advanced indexing strategies. 
+                    Reduced unauthorized access attempts by 95% through robust authentication implementation.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Trading Analysis Group</div>
+                    <div class="item-date">Jan 2020 – May 2021</div>
+                </div>
+                <p class="item-description">
+                    Generated $6,000 revenue within 6 months by establishing trading analysis platform utilizing quantitative analysis. 
+                    Achieved 40% monthly membership growth through data-driven Facebook ad campaign optimization with $500 monthly budget.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Market Research</span>
+                    <span class="tech-tag">Statistical Analysis</span>
+                    <span class="tech-tag">Quantitative Modeling</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Java, JavaScript</li>
+                        <li>Python (pandas, NumPy, scikit-learn)</li>
+                        <li>SQL (PostgreSQL)</li>
+                        <li>HTML/CSS, R</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <ul>
+                        <li>Git, Docker</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Firebase, VS Code</li>
+                        <li>Jupyter Notebooks</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>English</li>
+                        <li>Russian</li>
+                        <li>Kazakh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p class="description" style="margin-bottom: 2rem;">
+                I'm always open to discussing new opportunities, collaborations, or just having a conversation 
+                about technology and business. Feel free to reach out.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:yessimkhan.seidikarim@gmail.com">yessimkhan.seidikarim@gmail.com</a>
+                <a href="https://linkedin.com/in/yessimkhan" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yessimkhan" target="_blank">GitHub</a>
+            </div>
+            <p style="margin-top: 4rem; color: #555; font-size: 0.9rem;">Vancouver, BC • Canada</p>
+        </div>
+    </section>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const button = document.querySelector('.theme-toggle');
+            const isLight = document.body.classList.contains('light-mode');
+            button.textContent = isLight ? '🌙' : '☀';
+            
+            // Save preference
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').textContent = '🌙';
+            }
+        });
+
+        // Add scroll reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
