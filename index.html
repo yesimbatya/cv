@@ -4,12 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yessimkhan Seidikarim</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
     <style>
       * {
         margin: 0;
@@ -18,13 +12,52 @@
       }
 
       body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, sans-serif;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         background: #0a0a0a;
         color: #e0e0e0;
         line-height: 1.6;
         overflow-x: hidden;
         transition: background 0.3s, color 0.3s;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+            circle at 20% 50%,
+            rgba(59, 130, 246, 0.03) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(34, 197, 94, 0.03) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      body.light-mode::before {
+        background-image: radial-gradient(
+            circle at 20% 50%,
+            rgba(59, 130, 246, 0.02) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(34, 197, 94, 0.02) 0%,
+            transparent 50%
+          );
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
       }
 
       body.light-mode {
@@ -87,6 +120,22 @@
         font-size: 0.9rem;
         transition: color 0.3s;
         cursor: pointer;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #3b82f6, #22c55e);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
       }
 
       .nav-links a:hover {
@@ -159,6 +208,17 @@
         margin-bottom: 1rem;
         letter-spacing: -2px;
         line-height: 1.1;
+        background: linear-gradient(135deg, #fff 0%, #999 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      body.light-mode h1 {
+        background: linear-gradient(135deg, #1a1a1a 0%, #666 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
 
       .subtitle {
@@ -200,11 +260,34 @@
         border-radius: 6px;
         transition: all 0.3s;
         font-size: 0.9rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-links a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(59, 130, 246, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .contact-links a:hover::before {
+        left: 100%;
       }
 
       .contact-links a:hover {
-        border-color: #666;
-        background: #111;
+        border-color: #3b82f6;
+        background: rgba(59, 130, 246, 0.05);
+        transform: translateY(-2px);
       }
 
       body.light-mode .contact-links a {
@@ -213,8 +296,8 @@
       }
 
       body.light-mode .contact-links a:hover {
-        border-color: #999;
-        background: #f5f5f5;
+        border-color: #3b82f6;
+        background: rgba(59, 130, 246, 0.05);
       }
 
       h2 {
@@ -222,27 +305,58 @@
         margin-bottom: 3rem;
         font-weight: 600;
         letter-spacing: -1px;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      h2 .emoji {
+        font-style: normal;
+        font-size: 2.2rem;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
       }
 
       .experience-item,
       .education-item,
       .project-item {
         margin-bottom: 3rem;
-        padding-bottom: 3rem;
+        padding: 2rem;
+        padding-bottom: 2rem;
         border-bottom: 1px solid #1a1a1a;
-        transition: border-color 0.3s;
+        transition: all 0.3s;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid transparent;
+      }
+
+      .experience-item:hover,
+      .education-item:hover,
+      .project-item:hover {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(59, 130, 246, 0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       }
 
       body.light-mode .experience-item,
       body.light-mode .education-item,
       body.light-mode .project-item {
+        background: rgba(0, 0, 0, 0.02);
         border-bottom: 1px solid #e0e0e0;
+      }
+
+      body.light-mode .experience-item:hover,
+      body.light-mode .education-item:hover,
+      body.light-mode .project-item:hover {
+        background: rgba(59, 130, 246, 0.03);
+        border-color: rgba(59, 130, 246, 0.2);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       }
 
       .experience-item:last-child,
       .education-item:last-child,
       .project-item:last-child {
-        border-bottom: none;
+        border-bottom: 1px solid transparent;
       }
 
       .item-header {
@@ -450,7 +564,7 @@
           From analyzing financial statements at Bank of Development to building
           AI-powered applications, I bridge technical expertise with business
           acumen to solve complex problems. Currently exploring quantitative
-          economics and computational neuroscience.
+          economics and data-driven decision making.
         </p>
         <div class="contact-links">
           <a href="mailto:yessimkhan.seidikarim@gmail.com">Email</a>
@@ -465,7 +579,7 @@
 
     <section id="experience">
       <div class="container">
-        <h2>Experience</h2>
+        <h2><span class="emoji">🌱</span>Experience</h2>
 
         <div class="experience-item">
           <div class="item-header">
@@ -546,7 +660,7 @@
 
     <section id="projects">
       <div class="container">
-        <h2>Projects</h2>
+        <h2><span class="emoji">🧠</span>Projects</h2>
 
         <div class="project-item">
           <div class="item-header">
@@ -627,7 +741,7 @@
 
     <section id="skills">
       <div class="container">
-        <h2>Skills</h2>
+        <h2><span class="emoji">⚡</span>Skills</h2>
         <div class="skills-grid">
           <div class="skill-category">
             <h3>Programming</h3>
@@ -661,7 +775,7 @@
 
     <section id="contact">
       <div class="container">
-        <h2>Let's Connect</h2>
+        <h2><span class="emoji">❤️</span>Let's Connect</h2>
         <p class="description" style="margin-bottom: 2rem">
           I'm always open to discussing new opportunities, collaborations, or
           just having a conversation about technology and business. Feel free to
