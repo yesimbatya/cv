@@ -396,6 +396,246 @@
         color: #555;
       }
 
+      /* Learning Section */
+      .learning-grid {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .course-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        padding: 1.5rem;
+        border: 1px solid #eee;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .course-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: #1a1a1a;
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+      }
+
+      .course-card:hover {
+        border-color: #1a1a1a;
+        transform: translateX(8px);
+      }
+
+      .course-card:hover::before {
+        transform: scaleY(1);
+      }
+
+      body.dark-mode .course-card {
+        border-color: #222;
+      }
+
+      body.dark-mode .course-card::before {
+        background: #e8e8e8;
+      }
+
+      body.dark-mode .course-card:hover {
+        border-color: #e8e8e8;
+      }
+
+      .course-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .course-title {
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+
+      .course-status {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0.25rem 0.5rem;
+        border: 1px solid #ddd;
+        color: #888;
+      }
+
+      .course-status.in-progress {
+        border-color: #1a1a1a;
+        color: #1a1a1a;
+      }
+
+      body.dark-mode .course-status {
+        border-color: #444;
+        color: #666;
+      }
+
+      body.dark-mode .course-status.in-progress {
+        border-color: #e8e8e8;
+        color: #e8e8e8;
+      }
+
+      .course-provider {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 1rem;
+      }
+
+      body.dark-mode .course-provider {
+        color: #666;
+      }
+
+      .course-progress {
+        height: 2px;
+        background: #eee;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      body.dark-mode .course-progress {
+        background: #333;
+      }
+
+      .course-progress-bar {
+        height: 100%;
+        background: #2d8a4e;
+        transition: width 0.3s ease;
+      }
+
+      body.dark-mode .course-progress-bar {
+        background: #4ade80;
+      }
+
+      /* Completed course styles */
+      .course-status.completed {
+        border-color: #2d8a4e;
+        color: #2d8a4e;
+      }
+
+      body.dark-mode .course-status.completed {
+        border-color: #4ade80;
+        color: #4ade80;
+      }
+
+      .course-certificate {
+        margin-top: 1rem;
+        overflow: hidden;
+        border-radius: 4px;
+        position: relative;
+      }
+
+      .course-certificate img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: grayscale(30%);
+        opacity: 0.9;
+        transition: all 0.3s ease;
+      }
+
+      .course-card:hover .course-certificate img {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.02);
+      }
+
+      body.dark-mode .course-certificate img {
+        filter: grayscale(40%) brightness(0.85);
+        opacity: 0.85;
+      }
+
+      body.dark-mode .course-card:hover .course-certificate img {
+        filter: grayscale(0%) brightness(1);
+        opacity: 1;
+      }
+
+      .course-arrow {
+        font-size: 0.85rem;
+        color: #888;
+        transition: transform 0.3s ease;
+        display: inline-block;
+      }
+
+      .course-card:hover .course-arrow {
+        transform: translateX(4px);
+      }
+
+      body.dark-mode .course-arrow {
+        color: #666;
+      }
+
+      .course-notes {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
+      }
+
+      body.dark-mode .course-notes {
+        border-top-color: #222;
+      }
+
+      .notes-header {
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 1rem;
+        color: #888;
+      }
+
+      body.dark-mode .notes-header {
+        color: #666;
+      }
+
+      .note-item {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 0.75rem;
+        padding-left: 1rem;
+        position: relative;
+      }
+
+      .note-item::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: #888;
+      }
+
+      body.dark-mode .note-item {
+        color: #999;
+      }
+
+      body.dark-mode .note-item::before {
+        color: #666;
+      }
+
+      .tech-learned {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .tech-learned .tech-tag {
+        background: #f5f5f5;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+      }
+
+      body.dark-mode .tech-learned .tech-tag {
+        background: #1a1a1a;
+      }
+
       /* Mobile */
       @media (max-width: 768px) {
         h1 {
@@ -429,6 +669,7 @@
           <li><a onclick="scrollToSection('about')">About</a></li>
           <li><a onclick="scrollToSection('experience')">Experience</a></li>
           <li><a onclick="scrollToSection('projects')">Projects</a></li>
+          <li><a onclick="scrollToSection('learning')">Learning</a></li>
           <li><a onclick="scrollToSection('contact')">Contact</a></li>
         </ul>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
@@ -525,23 +766,6 @@
 
           <div class="item">
             <div class="item-header">
-              <div class="item-title">Quantitative Economics</div>
-              <div class="item-date">2025 – Present</div>
-            </div>
-            <p class="item-description">
-              Data science curriculum covering economic modeling, statistical analysis, and machine learning.
-              Implemented data cleaning on large economic datasets and created interactive visualizations.
-            </p>
-            <div class="tech-stack">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Pandas</span>
-              <span class="tech-tag">NumPy</span>
-              <span class="tech-tag">Matplotlib</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="item-header">
               <div class="item-title">Productivity Timer</div>
               <div class="item-date">Sep – Dec 2024</div>
             </div>
@@ -620,6 +844,148 @@
                 <li>Kazakh</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="learning">
+        <div class="container">
+          <h2>Learning</h2>
+          <div class="learning-grid">
+
+            <div class="course-item">
+              <a href="https://quantecon.org/" target="_blank" class="course-card">
+                <div class="course-header">
+                  <div class="course-title">Quantitative Economics</div>
+                  <span class="course-status in-progress">In Progress</span>
+                </div>
+                <div class="course-provider">QuantEcon <span class="course-arrow">→</span></div>
+                <div class="course-progress"><div class="course-progress-bar" style="width: 15%"></div></div>
+              </a>
+              <div class="course-notes">
+                <div class="notes-header">Notes & Implementations</div>
+                <div class="note-item">Data science curriculum covering economic modeling, statistical analysis, and machine learning</div>
+                <div class="note-item">Implemented data cleaning on large economic datasets and created interactive visualizations</div>
+                <div class="tech-learned">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Pandas</span>
+                  <span class="tech-tag">NumPy</span>
+                  <span class="tech-tag">Matplotlib</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <a href="https://cs50.harvard.edu/ai/" target="_blank" class="course-card">
+                <div class="course-header">
+                  <div class="course-title">CS50's Introduction to AI with Python</div>
+                  <span class="course-status in-progress">In Progress</span>
+                </div>
+                <div class="course-provider">Harvard / edX <span class="course-arrow">→</span></div>
+                <div class="course-progress"><div class="course-progress-bar" style="width: 14.3%"></div></div>
+              </a>
+              <div class="course-notes">
+                <div class="notes-header">Notes & Implementations</div>
+                <div class="note-item">Exploring search algorithms (BFS, DFS, A*) for pathfinding problems</div>
+                <div class="note-item">Building game-playing AI with minimax and alpha-beta pruning</div>
+                <div class="tech-learned">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Search</span>
+                  <span class="tech-tag">Knowledge</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <a href="https://www.coursera.org/learn/machine-learning" target="_blank" class="course-card">
+                <div class="course-header">
+                  <div class="course-title">Machine Learning Specialization</div>
+                  <span class="course-status in-progress">In Progress</span>
+                </div>
+                <div class="course-provider">Stanford / Coursera <span class="course-arrow">→</span></div>
+                <div class="course-progress"><div class="course-progress-bar" style="width: 13%"></div></div>
+              </a>
+              <div class="course-notes">
+                <div class="notes-header">Notes & Implementations</div>
+                <div class="note-item">Understanding supervised learning: regression and classification</div>
+                <div class="note-item">Implementing gradient descent from scratch</div>
+                <div class="tech-learned">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">NumPy</span>
+                  <span class="tech-tag">Scikit-learn</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <a href="https://www.coursera.org/learn/computational-neuroscience" target="_blank" class="course-card">
+                <div class="course-header">
+                  <div class="course-title">Computational Neuroscience</div>
+                  <span class="course-status in-progress">In Progress</span>
+                </div>
+                <div class="course-provider">University of Washington / Coursera <span class="course-arrow">→</span></div>
+                <div class="course-progress"><div class="course-progress-bar" style="width: 23%"></div></div>
+              </a>
+              <div class="course-notes">
+                <div class="notes-header">Notes & Implementations</div>
+                <div class="note-item">Modeling neural encoding and decoding</div>
+                <div class="note-item">Exploring how the brain processes information</div>
+                <div class="tech-learned">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">MATLAB</span>
+                  <span class="tech-tag">Neuroscience</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <a href="https://coursera.org/verify/TFHXZGEBKEVV" target="_blank" class="course-card">
+                <div class="course-header">
+                  <div class="course-title">AI For Everyone</div>
+                  <span class="course-status completed">Completed</span>
+                </div>
+                <div class="course-provider">DeepLearning.AI / Coursera <span class="course-arrow">→</span></div>
+                <div class="course-progress"><div class="course-progress-bar" style="width: 100%"></div></div>
+                <div class="course-certificate">
+                  <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~TFHXZGEBKEVV/CERTIFICATE_LANDING_PAGE~TFHXZGEBKEVV.jpeg" alt="AI For Everyone Certificate" />
+                </div>
+              </a>
+              <div class="course-notes">
+                <div class="notes-header">Notes & Takeaways</div>
+                <div class="note-item">Understanding AI terminology and capabilities for business applications</div>
+                <div class="note-item">Learning to build AI strategy and navigate ethical considerations</div>
+                <div class="tech-learned">
+                  <span class="tech-tag">AI Strategy</span>
+                  <span class="tech-tag">Machine Learning</span>
+                  <span class="tech-tag">Business</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="course-item">
+              <a href="https://coursera.org/verify/6VFEWH5UN9G5" target="_blank" class="course-card">
+                <div class="course-header">
+                  <div class="course-title">Learning How to Learn</div>
+                  <span class="course-status completed">Completed</span>
+                </div>
+                <div class="course-provider">Deep Teaching Solutions / Coursera <span class="course-arrow">→</span></div>
+                <div class="course-progress"><div class="course-progress-bar" style="width: 100%"></div></div>
+                <div class="course-certificate">
+                  <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~6VFEWH5UN9G5/CERTIFICATE_LANDING_PAGE~6VFEWH5UN9G5.jpeg" alt="Learning How to Learn Certificate" />
+                </div>
+              </a>
+              <div class="course-notes">
+                <div class="notes-header">Notes & Takeaways</div>
+                <div class="note-item">Mastering focused and diffuse modes of thinking for better learning</div>
+                <div class="note-item">Techniques like chunking, spaced repetition, and defeating procrastination</div>
+                <div class="tech-learned">
+                  <span class="tech-tag">Metacognition</span>
+                  <span class="tech-tag">Memory</span>
+                  <span class="tech-tag">Productivity</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
