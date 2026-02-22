@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yessimkhan Seidikarim</title>
+    <title>yessimkhan</title>
     <style>
       @font-face {
         font-family: "Geist Pixel";
@@ -18,40 +18,33 @@
       }
 
       body {
-        font-family: "Geist Pixel", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background: #fafafa;
-        color: #1a1a1a;
+        font-family: "Geist Pixel", system-ui, -apple-system, sans-serif;
+        background: #f5f5f0;
+        color: #111;
         line-height: 1.7;
-        font-weight: 300;
+        font-weight: 400;
         letter-spacing: 0.01em;
       }
 
       body.dark-mode {
-        background: #0d0d0d;
-        color: #e8e8e8;
+        background: #0a0a0a;
+        color: #e5e5e5;
       }
 
       .container {
-        max-width: 720px;
+        max-width: 680px;
         margin: 0 auto;
         padding: 0 2rem;
       }
 
-      /* Navigation - Minimal */
+      /* Navigation - reysu inspired */
       nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
         padding: 1.5rem 0;
-        z-index: 100;
-        background: #fafafa;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
       }
 
       body.dark-mode nav {
-        background: #0d0d0d;
-        border-bottom: 1px solid #222;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
       }
 
       nav .container {
@@ -60,9 +53,17 @@
         align-items: center;
       }
 
+      .nav-logo {
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: inherit;
+        letter-spacing: -0.01em;
+      }
+
       .nav-links {
         display: flex;
-        gap: 2.5rem;
+        gap: 2rem;
         list-style: none;
         align-items: center;
       }
@@ -71,22 +72,21 @@
         color: #666;
         text-decoration: none;
         font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
         cursor: pointer;
         transition: color 0.2s;
       }
 
       .nav-links a:hover {
-        color: #1a1a1a;
+        color: #111;
+        text-decoration: underline;
       }
 
       body.dark-mode .nav-links a {
-        color: #888;
+        color: #777;
       }
 
       body.dark-mode .nav-links a:hover {
-        color: #fff;
+        color: #e5e5e5;
       }
 
       .theme-toggle {
@@ -94,468 +94,375 @@
         border: none;
         color: #666;
         cursor: pointer;
-        font-size: 0.9rem;
-        padding: 0.5rem;
+        font-size: 0.8rem;
+        padding: 0;
         transition: color 0.2s;
       }
 
       .theme-toggle:hover {
-        color: #1a1a1a;
+        color: #111;
       }
 
       body.dark-mode .theme-toggle {
-        color: #888;
+        color: #777;
       }
 
       body.dark-mode .theme-toggle:hover {
-        color: #fff;
+        color: #e5e5e5;
       }
 
-      /* ASCII Header - Minimal */
+      /* ASCII Header */
       .ascii-header {
-        padding: 8rem 0 4rem;
+        padding: 4rem 0 2rem;
         text-align: center;
       }
 
       .ascii-art {
         font-family: "SF Mono", "Fira Code", "Courier New", monospace;
-        font-size: 0.5rem;
+        font-size: 0.45rem;
         line-height: 1.15;
         white-space: pre;
         display: inline-block;
+        opacity: 0.9;
       }
 
-      .ascii-art .black {
-        color: #1a1a1a;
-      }
-
-      .ascii-art .white {
-        color: #e8e8e8;
-      }
-
-      body.dark-mode .ascii-art .black {
-        color: #e8e8e8;
-      }
-
-      body.dark-mode .ascii-art .white {
-        color: #1a1a1a;
+      body.dark-mode .ascii-art {
+        opacity: 0.8;
       }
 
       @media (max-width: 768px) {
         .ascii-art {
-          font-size: 0.28rem;
+          font-size: 0.25rem;
         }
       }
 
-      /* Sections */
+      /* Main content */
+      main {
+        padding: 2rem 0 6rem;
+      }
+
       section {
-        padding: 6rem 0;
-        border-top: 1px solid #eee;
+        padding: 3rem 0;
       }
 
-      body.dark-mode section {
-        border-top: 1px solid #1a1a1a;
-      }
-
-      section:first-of-type {
-        border-top: none;
-      }
-
-      /* Hero */
+      /* Hero - casual intro */
       .hero {
-        padding: 4rem 0 6rem;
+        padding: 2rem 0 4rem;
+      }
+
+      .greeting {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 1.5rem;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 400;
         margin-bottom: 1.5rem;
-        letter-spacing: -0.02em;
-        line-height: 1.3;
-        max-width: 580px;
+        line-height: 1.4;
       }
 
-      .subtitle {
-        font-size: 0.85rem;
-        color: #888;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-      }
-
-      body.dark-mode .subtitle {
-        color: #666;
-      }
-
-      .description {
-        font-size: 1rem;
+      .bio {
+        font-size: 0.95rem;
         color: #555;
+        margin-bottom: 2rem;
         max-width: 540px;
-        margin-bottom: 3rem;
       }
 
-      body.dark-mode .description {
+      body.dark-mode .bio {
         color: #999;
       }
 
-      .contact-links {
+      .social-links {
         display: flex;
-        gap: 1rem;
+        gap: 1.5rem;
       }
 
-      .contact-links a {
-        color: #1a1a1a;
+      .social-links a {
+        color: #555;
         text-decoration: none;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        padding: 0.75rem 1.25rem;
-        border: 1px solid #ddd;
-        transition: all 0.2s;
+        font-size: 0.85rem;
+        transition: color 0.2s;
       }
 
-      .contact-links a:hover {
-        border-color: #1a1a1a;
+      .social-links a:hover {
+        color: #111;
+        text-decoration: underline;
       }
 
-      body.dark-mode .contact-links a {
-        color: #e8e8e8;
-        border-color: #333;
+      body.dark-mode .social-links a {
+        color: #888;
       }
 
-      body.dark-mode .contact-links a:hover {
-        border-color: #e8e8e8;
+      body.dark-mode .social-links a:hover {
+        color: #e5e5e5;
       }
 
       /* Section Headers */
       h2 {
         font-size: 0.75rem;
         font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        margin-bottom: 3rem;
+        text-transform: lowercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 2rem;
         color: #888;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
       }
 
-      body.dark-mode h2 {
-        color: #666;
+      h2::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: rgba(0,0,0,0.08);
       }
 
-      /* Experience & Projects */
-      .item {
-        margin-bottom: 3rem;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid #eee;
+      body.dark-mode h2::after {
+        background: rgba(255,255,255,0.08);
       }
 
-      body.dark-mode .item {
-        border-bottom: 1px solid #1a1a1a;
+      /* Experience - table style */
+      .exp-table {
+        width: 100%;
+        border-collapse: collapse;
       }
 
-      .item:last-child {
+      .exp-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        align-items: baseline;
+      }
+
+      body.dark-mode .exp-row {
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .exp-row:last-child {
         border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
       }
 
-      .item-header {
+      .exp-title {
+        font-size: 0.95rem;
+      }
+
+      .exp-meta {
+        font-size: 0.8rem;
+        color: #888;
+        margin-top: 0.25rem;
+      }
+
+      .exp-date {
+        font-size: 0.8rem;
+        color: #888;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      /* Projects - simple list */
+      .project-item {
+        padding: 1.25rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+
+      body.dark-mode .project-item {
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .project-item:last-child {
+        border-bottom: none;
+      }
+
+      .project-header {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
         margin-bottom: 0.5rem;
-        flex-wrap: wrap;
-        gap: 0.5rem;
       }
 
-      .item-title {
-        font-size: 1.1rem;
-        font-weight: 400;
-      }
-
-      .item-date {
-        font-size: 0.8rem;
-        color: #888;
-      }
-
-      body.dark-mode .item-date {
-        color: #666;
-      }
-
-      .item-company {
-        font-size: 0.85rem;
-        color: #888;
-        margin-bottom: 1rem;
-      }
-
-      body.dark-mode .item-company {
-        color: #666;
-      }
-
-      .item-description {
-        color: #555;
+      .project-title {
         font-size: 0.95rem;
       }
 
-      body.dark-mode .item-description {
+      .project-date {
+        font-size: 0.8rem;
+        color: #888;
+      }
+
+      .project-desc {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 0.75rem;
+      }
+
+      body.dark-mode .project-desc {
         color: #999;
       }
 
-      .item-description li {
-        margin-bottom: 0.5rem;
-        margin-left: 1rem;
-      }
-
-      .tech-stack {
+      .tags {
         display: flex;
-        gap: 0.75rem;
+        gap: 0.5rem;
         flex-wrap: wrap;
-        margin-top: 1rem;
       }
 
-      .tech-tag {
+      .tag {
         font-size: 0.7rem;
         color: #888;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+        text-transform: lowercase;
       }
 
-      body.dark-mode .tech-tag {
-        color: #666;
+      /* Skills - table with progress bars */
+      .skills-table {
+        width: 100%;
       }
 
-      /* Skills */
-      .skills-grid {
+      .skill-row {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
+        grid-template-columns: 140px 1fr;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        align-items: center;
       }
 
-      @media (max-width: 600px) {
-        .skills-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
+      .skill-name {
+        font-size: 0.85rem;
+        color: #555;
       }
 
-      .skill-category h3 {
-        font-size: 0.7rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        margin-bottom: 1rem;
-        color: #1a1a1a;
+      body.dark-mode .skill-name {
+        color: #999;
       }
 
-      body.dark-mode .skill-category h3 {
-        color: #e8e8e8;
+      .skill-bar {
+        font-family: "SF Mono", monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        color: #888;
       }
 
-      .skill-category ul {
-        list-style: none;
-      }
-
-      .skill-category li {
+      body.dark-mode .skill-bar {
         color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 0.4rem;
-      }
-
-      body.dark-mode .skill-category li {
-        color: #888;
-      }
-
-      /* Contact */
-      #contact .contact-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
-
-      #contact .contact-links a {
-        border: none;
-        padding: 0;
-        font-size: 0.9rem;
-        text-transform: none;
-        letter-spacing: 0;
-        color: #555;
-      }
-
-      #contact .contact-links a:hover {
-        color: #1a1a1a;
-      }
-
-      body.dark-mode #contact .contact-links a {
-        color: #888;
-      }
-
-      body.dark-mode #contact .contact-links a:hover {
-        color: #e8e8e8;
-      }
-
-      .location {
-        margin-top: 3rem;
-        font-size: 0.8rem;
-        color: #aaa;
-      }
-
-      body.dark-mode .location {
-        color: #555;
       }
 
       /* Learning Section */
       .learning-grid {
         display: grid;
-        gap: 2rem;
+        gap: 1.5rem;
       }
 
       .course-card {
         display: block;
         text-decoration: none;
         color: inherit;
-        padding: 1.5rem;
-        border: 1px solid #eee;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .course-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 3px;
-        height: 100%;
-        background: #1a1a1a;
-        transform: scaleY(0);
-        transition: transform 0.3s ease;
+        padding: 1.25rem;
+        background: rgba(0,0,0,0.02);
+        transition: all 0.2s ease;
       }
 
       .course-card:hover {
-        border-color: #1a1a1a;
-        transform: translateX(8px);
-      }
-
-      .course-card:hover::before {
-        transform: scaleY(1);
+        background: rgba(0,0,0,0.04);
       }
 
       body.dark-mode .course-card {
-        border-color: #222;
-      }
-
-      body.dark-mode .course-card::before {
-        background: #e8e8e8;
+        background: rgba(255,255,255,0.02);
       }
 
       body.dark-mode .course-card:hover {
-        border-color: #e8e8e8;
+        background: rgba(255,255,255,0.04);
       }
 
       .course-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 0.75rem;
-        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
         gap: 0.5rem;
       }
 
       .course-title {
-        font-size: 1.1rem;
-        font-weight: 400;
+        font-size: 0.95rem;
       }
 
       .course-status {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        padding: 0.25rem 0.5rem;
-        border: 1px solid #ddd;
-        color: #888;
+        font-size: 0.65rem;
+        text-transform: lowercase;
+        padding: 0.2rem 0.4rem;
+        background: rgba(0,0,0,0.05);
+        color: #666;
       }
 
       .course-status.in-progress {
-        border-color: #1a1a1a;
-        color: #1a1a1a;
+        background: rgba(45, 138, 78, 0.1);
+        color: #2d8a4e;
+      }
+
+      .course-status.completed {
+        background: rgba(45, 138, 78, 0.15);
+        color: #2d8a4e;
       }
 
       body.dark-mode .course-status {
-        border-color: #444;
-        color: #666;
+        background: rgba(255,255,255,0.05);
+        color: #888;
       }
 
-      body.dark-mode .course-status.in-progress {
-        border-color: #e8e8e8;
-        color: #e8e8e8;
+      body.dark-mode .course-status.in-progress,
+      body.dark-mode .course-status.completed {
+        background: rgba(74, 222, 128, 0.1);
+        color: #4ade80;
       }
 
       .course-provider {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         color: #888;
-        margin-bottom: 1rem;
-      }
-
-      body.dark-mode .course-provider {
-        color: #666;
+        margin-bottom: 0.75rem;
       }
 
       .course-progress {
         height: 2px;
-        background: #eee;
+        background: rgba(0,0,0,0.06);
         width: 100%;
         overflow: hidden;
       }
 
       body.dark-mode .course-progress {
-        background: #333;
+        background: rgba(255,255,255,0.06);
       }
 
       .course-progress-bar {
         height: 100%;
         background: #2d8a4e;
-        transition: width 0.3s ease;
       }
 
       body.dark-mode .course-progress-bar {
         background: #4ade80;
       }
 
-      /* Completed course styles */
-      .course-status.completed {
-        border-color: #2d8a4e;
-        color: #2d8a4e;
-      }
-
-      body.dark-mode .course-status.completed {
-        border-color: #4ade80;
-        color: #4ade80;
-      }
-
       .course-certificate {
         margin-top: 1rem;
         overflow: hidden;
-        border-radius: 4px;
-        position: relative;
       }
 
       .course-certificate img {
         width: 100%;
         height: auto;
         display: block;
-        filter: grayscale(30%);
+        filter: grayscale(20%);
         opacity: 0.9;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
       }
 
       .course-card:hover .course-certificate img {
         filter: grayscale(0%);
         opacity: 1;
-        transform: scale(1.02);
       }
 
       body.dark-mode .course-certificate img {
-        filter: grayscale(40%) brightness(0.85);
+        filter: grayscale(30%) brightness(0.9);
         opacity: 0.85;
       }
 
@@ -564,106 +471,136 @@
         opacity: 1;
       }
 
-      .course-arrow {
-        font-size: 0.85rem;
-        color: #888;
-        transition: transform 0.3s ease;
-        display: inline-block;
-      }
-
-      .course-card:hover .course-arrow {
-        transform: translateX(4px);
-      }
-
-      body.dark-mode .course-arrow {
-        color: #666;
-      }
-
       .course-notes {
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #eee;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(0,0,0,0.05);
       }
 
       body.dark-mode .course-notes {
-        border-top-color: #222;
+        border-top-color: rgba(255,255,255,0.05);
       }
 
       .notes-header {
         font-size: 0.7rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        margin-bottom: 1rem;
+        text-transform: lowercase;
+        margin-bottom: 0.75rem;
         color: #888;
       }
 
-      body.dark-mode .notes-header {
-        color: #666;
-      }
-
       .note-item {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: #555;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
         padding-left: 1rem;
         position: relative;
       }
 
       .note-item::before {
-        content: '→';
+        content: '>';
         position: absolute;
         left: 0;
-        color: #888;
+        color: #aaa;
+        font-family: monospace;
       }
 
       body.dark-mode .note-item {
         color: #999;
       }
 
-      body.dark-mode .note-item::before {
-        color: #666;
-      }
-
       .tech-learned {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.4rem;
         flex-wrap: wrap;
-        margin-top: 1rem;
+        margin-top: 0.75rem;
       }
 
-      .tech-learned .tech-tag {
-        background: #f5f5f5;
-        padding: 0.25rem 0.5rem;
-        font-size: 0.7rem;
+      .tech-learned .tag {
+        background: rgba(0,0,0,0.04);
+        padding: 0.15rem 0.4rem;
+        font-size: 0.65rem;
       }
 
-      body.dark-mode .tech-learned .tech-tag {
-        background: #1a1a1a;
+      body.dark-mode .tech-learned .tag {
+        background: rgba(255,255,255,0.04);
+      }
+
+      /* Footer */
+      footer {
+        padding: 3rem 0;
+        border-top: 1px solid rgba(0,0,0,0.06);
+      }
+
+      body.dark-mode footer {
+        border-top: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .location {
+        font-size: 0.8rem;
+        color: #888;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .footer-links a {
+        color: #888;
+        text-decoration: none;
+        font-size: 0.8rem;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: #111;
+      }
+
+      body.dark-mode .footer-links a:hover {
+        color: #e5e5e5;
       }
 
       /* Mobile */
       @media (max-width: 768px) {
         h1 {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
 
         nav .container {
-          flex-direction: column;
+          flex-wrap: wrap;
           gap: 1rem;
         }
 
         .nav-links {
-          gap: 1.5rem;
+          gap: 1.25rem;
+          order: 3;
+          width: 100%;
+          justify-content: center;
         }
 
-        .item-header {
+        .skill-row {
+          grid-template-columns: 100px 1fr;
+        }
+
+        .exp-row {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+        }
+
+        .exp-date {
+          text-align: left;
+        }
+
+        .footer-content {
           flex-direction: column;
-          align-items: flex-start;
-        }
-
-        section {
-          padding: 4rem 0;
+          gap: 1rem;
+          text-align: center;
         }
       }
     </style>
@@ -671,212 +608,187 @@
   <body class="dark-mode">
     <nav>
       <div class="container">
+        <a href="#" class="nav-logo">yessimkhan</a>
         <ul class="nav-links">
-          <li><a onclick="scrollToSection('about')">About</a></li>
-          <li><a onclick="scrollToSection('experience')">Experience</a></li>
-          <li><a onclick="scrollToSection('projects')">Projects</a></li>
-          <li><a onclick="scrollToSection('learning')">Learning</a></li>
-          <li><a onclick="scrollToSection('contact')">Contact</a></li>
+          <li><a onclick="scrollToSection('about')">about</a></li>
+          <li><a onclick="scrollToSection('experience')">experience</a></li>
+          <li><a onclick="scrollToSection('projects')">projects</a></li>
+          <li><a onclick="scrollToSection('learning')">learning</a></li>
         </ul>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-          ○
+          light
         </button>
       </div>
     </nav>
 
     <header class="ascii-header">
       <div class="container">
-        <pre class="ascii-art"><span class="black">██╗   ██╗███████╗███████╗███████╗██╗███╗   ███╗</span><span class="white">██╗  ██╗██╗  ██╗ █████╗ ███╗   ██╗</span>
-<span class="black">╚██╗ ██╔╝██╔════╝██╔════╝██╔════╝██║████╗ ████║</span><span class="white">██║ ██╔╝██║  ██║██╔══██╗████╗  ██║</span>
-<span class="black"> ╚████╔╝ █████╗  ███████╗███████╗██║██╔████╔██║</span><span class="white">█████╔╝ ███████║███████║██╔██╗ ██║</span>
-<span class="black">  ╚██╔╝  ██╔══╝  ╚════██║╚════██║██║██║╚██╔╝██║</span><span class="white">██╔═██╗ ██╔══██║██╔══██║██║╚██╗██║</span>
-<span class="black">   ██║   ███████╗███████║███████║██║██║ ╚═╝ ██║</span><span class="white">██║  ██╗██║  ██║██║  ██║██║ ╚████║</span>
-<span class="black">   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝╚═╝     ╚═╝</span><span class="white">╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝</span></pre>
+        <pre class="ascii-art">██╗   ██╗███████╗███████╗███████╗██╗███╗   ███╗██╗  ██╗██╗  ██╗ █████╗ ███╗   ██╗
+╚██╗ ██╔╝██╔════╝██╔════╝██╔════╝██║████╗ ████║██║ ██╔╝██║  ██║██╔══██╗████╗  ██║
+ ╚████╔╝ █████╗  ███████╗███████╗██║██╔████╔██║█████╔╝ ███████║███████║██╔██╗ ██║
+  ╚██╔╝  ██╔══╝  ╚════██║╚════██║██║██║╚██╔╝██║██╔═██╗ ██╔══██║██╔══██║██║╚██╗██║
+   ██║   ███████╗███████║███████║██║██║ ╚═╝ ██║██║  ██╗██║  ██║██║  ██║██║ ╚████║
+   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝</pre>
       </div>
     </header>
 
     <main>
-      <section id="about" class="hero">
-        <div class="container">
-          <p class="subtitle">BCom Computer Science & Business @ UBC</p>
-          <h1>Building solutions at the intersection of business and technology</h1>
-          <p class="description">
-            From analyzing financial statements to building AI-powered applications.
-            Bridging technical expertise with business acumen. Currently exploring
+      <div class="container">
+        <section id="about" class="hero">
+          <p class="greeting">bcom computer science & business @ ubc</p>
+          <h1>building at the intersection of business and technology</h1>
+          <p class="bio">
+            from analyzing financial statements to building ai-powered applications.
+            bridging technical expertise with business acumen. currently exploring
             quantitative economics and data-driven decision making.
           </p>
-          <div class="contact-links">
-            <a href="mailto:yessimkhan.seidikarim@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/yessimkhan" target="_blank">LinkedIn</a>
-            <a href="https://github.com/yesimbatya" target="_blank">GitHub</a>
+          <div class="social-links">
+            <a href="mailto:yessimkhan.seidikarim@gmail.com">email</a>
+            <a href="https://linkedin.com/in/yessimkhan" target="_blank">linkedin</a>
+            <a href="https://github.com/yesimbatya" target="_blank">github</a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="experience">
-        <div class="container">
-          <h2>Experience</h2>
+        <section id="experience">
+          <h2>experience</h2>
 
-          <div class="item">
-            <div class="item-header">
-              <div class="item-title">Credit Analysis Intern</div>
-              <div class="item-date">Jun – Aug 2025</div>
+          <div class="exp-row">
+            <div>
+              <div class="exp-title">credit analysis intern</div>
+              <div class="exp-meta">bank of development, astana</div>
             </div>
-            <div class="item-company">Bank of Development, Astana</div>
-            <ul class="item-description">
-              <li>Analyzed financial statements and credit applications, assessing creditworthiness and risk factors</li>
-            </ul>
+            <div class="exp-date">jun – aug 2025</div>
           </div>
 
-          <div class="item">
-            <div class="item-header">
-              <div class="item-title">IT Intern</div>
-              <div class="item-date">May – Jun 2025</div>
+          <div class="exp-row">
+            <div>
+              <div class="exp-title">it intern</div>
+              <div class="exp-meta">viterra kazakhstan, astana</div>
             </div>
-            <div class="item-company">Viterra Kazakhstan, Astana</div>
-            <ul class="item-description">
-              <li>Reviewed business logic for automation of content approval system on Microsoft Power Platform</li>
-              <li>Developed automation solutions for data extraction processes</li>
-            </ul>
+            <div class="exp-date">may – jun 2025</div>
           </div>
 
-          <div class="item">
-            <div class="item-header">
-              <div class="item-title">Full Stack Development Apprentice</div>
-              <div class="item-date">Jun – Aug 2024</div>
+          <div class="exp-row">
+            <div>
+              <div class="exp-title">full stack development apprentice</div>
+              <div class="exp-meta">nfactorial, almaty · 2.7% acceptance rate</div>
             </div>
-            <div class="item-company">Nfactorial, Almaty</div>
-            <ul class="item-description">
-              <li>Selected from 2,970 candidates (2.7% acceptance rate)</li>
-              <li>Developed AI-powered financial assistant for personal finance management</li>
-            </ul>
+            <div class="exp-date">jun – aug 2024</div>
           </div>
 
-          <div class="item">
-            <div class="item-header">
-              <div class="item-title">Assistant to Director of Growth</div>
-              <div class="item-date">Jun – Sep 2022</div>
+          <div class="exp-row">
+            <div>
+              <div class="exp-title">assistant to director of growth</div>
+              <div class="exp-meta">health project, astana</div>
             </div>
-            <div class="item-company">Health Project, Astana</div>
-            <ul class="item-description">
-              <li>Tracked operations across 10+ locations using data management and statistical analysis</li>
-              <li>Identified 3 high-potential expansion locations through quantitative market research</li>
-            </ul>
+            <div class="exp-date">jun – sep 2022</div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="projects">
-        <div class="container">
-          <h2>Projects</h2>
+        <section id="projects">
+          <h2>projects</h2>
 
-          <div class="item">
-            <div class="item-header">
-              <div class="item-title">Productivity Timer</div>
-              <div class="item-date">Sep – Dec 2024</div>
+          <div class="project-item">
+            <div class="project-header">
+              <span class="project-title">productivity timer</span>
+              <span class="project-date">2024</span>
             </div>
-            <p class="item-description">
-              Productivity tracking application with data persistence and intuitive GUI featuring
-              interactive charts for visualizing metrics and category-based analytics.
+            <p class="project-desc">
+              productivity tracking application with data persistence and intuitive gui
+              featuring interactive charts for visualizing metrics.
             </p>
-            <div class="tech-stack">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Swing</span>
-              <span class="tech-tag">JUnit</span>
+            <div class="tags">
+              <span class="tag">java</span>
+              <span class="tag">swing</span>
+              <span class="tag">junit</span>
             </div>
           </div>
 
-          <div class="item">
-            <div class="item-header">
-              <div class="item-title">Finova AI</div>
-              <div class="item-date">Jun – Aug 2024</div>
+          <div class="project-item">
+            <div class="project-header">
+              <span class="project-title">finova ai</span>
+              <span class="project-date">2024</span>
             </div>
-            <p class="item-description">
-              AI-powered financial assistant with 40% database performance improvement through
-              advanced indexing. Reduced unauthorized access by 95% through robust authentication.
+            <p class="project-desc">
+              ai-powered financial assistant with 40% database performance improvement
+              through advanced indexing. reduced unauthorized access by 95%.
             </p>
-            <div class="tech-stack">
-              <span class="tech-tag">Express</span>
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">PostgreSQL</span>
+            <div class="tags">
+              <span class="tag">express</span>
+              <span class="tag">react</span>
+              <span class="tag">mongodb</span>
+              <span class="tag">postgresql</span>
             </div>
           </div>
 
-          <div class="item">
-            <div class="item-header">
-              <div class="item-title">Trading Analysis Group</div>
-              <div class="item-date">Jan 2020 – May 2021</div>
+          <div class="project-item">
+            <div class="project-header">
+              <span class="project-title">trading analysis group</span>
+              <span class="project-date">2020 – 2021</span>
             </div>
-            <p class="item-description">
-              Generated $6,000 revenue in 6 months. Achieved 40% monthly membership growth
+            <p class="project-desc">
+              generated $6,000 revenue in 6 months. achieved 40% monthly membership growth
               through data-driven ad campaign optimization.
             </p>
-            <div class="tech-stack">
-              <span class="tech-tag">Market Research</span>
-              <span class="tech-tag">Statistical Analysis</span>
+            <div class="tags">
+              <span class="tag">market research</span>
+              <span class="tag">statistical analysis</span>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="skills">
-        <div class="container">
-          <h2>Skills</h2>
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3>Programming</h3>
-              <ul>
-                <li>Java, JavaScript</li>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>HTML/CSS, R</li>
-              </ul>
+        <section id="skills">
+          <h2>skills</h2>
+
+          <div class="skills-table">
+            <div class="skill-row">
+              <span class="skill-name">python</span>
+              <span class="skill-bar">■■■■■■■■□□</span>
             </div>
-            <div class="skill-category">
-              <h3>Tools</h3>
-              <ul>
-                <li>Git, Docker</li>
-                <li>Google Cloud</li>
-                <li>Firebase</li>
-                <li>Jupyter</li>
-              </ul>
+            <div class="skill-row">
+              <span class="skill-name">javascript</span>
+              <span class="skill-bar">■■■■■■■□□□</span>
             </div>
-            <div class="skill-category">
-              <h3>Languages</h3>
-              <ul>
-                <li>English</li>
-                <li>Russian</li>
-                <li>Kazakh</li>
-              </ul>
+            <div class="skill-row">
+              <span class="skill-name">java</span>
+              <span class="skill-bar">■■■■■■■□□□</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">sql</span>
+              <span class="skill-bar">■■■■■■□□□□</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">react</span>
+              <span class="skill-bar">■■■■■■□□□□</span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">git</span>
+              <span class="skill-bar">■■■■■■■■□□</span>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="learning">
-        <div class="container">
-          <h2>Learning</h2>
+        <section id="learning">
+          <h2>learning</h2>
           <div class="learning-grid">
 
             <div class="course-item">
               <a href="https://quantecon.org/" target="_blank" class="course-card">
                 <div class="course-header">
-                  <div class="course-title">Quantitative Economics</div>
-                  <span class="course-status in-progress">In Progress</span>
+                  <div class="course-title">quantitative economics</div>
+                  <span class="course-status in-progress">in progress</span>
                 </div>
-                <div class="course-provider">QuantEcon <span class="course-arrow">→</span></div>
+                <div class="course-provider">quantecon</div>
                 <div class="course-progress"><div class="course-progress-bar" style="width: 15%"></div></div>
               </a>
               <div class="course-notes">
-                <div class="notes-header">Notes & Implementations</div>
-                <div class="note-item">Data science curriculum covering economic modeling, statistical analysis, and machine learning</div>
-                <div class="note-item">Implemented data cleaning on large economic datasets and created interactive visualizations</div>
+                <div class="notes-header">notes</div>
+                <div class="note-item">economic modeling, statistical analysis, and machine learning</div>
+                <div class="note-item">data cleaning on large economic datasets</div>
                 <div class="tech-learned">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Pandas</span>
-                  <span class="tech-tag">NumPy</span>
-                  <span class="tech-tag">Matplotlib</span>
+                  <span class="tag">python</span>
+                  <span class="tag">pandas</span>
+                  <span class="tag">numpy</span>
                 </div>
               </div>
             </div>
@@ -884,20 +796,20 @@
             <div class="course-item">
               <a href="https://cs50.harvard.edu/ai/" target="_blank" class="course-card">
                 <div class="course-header">
-                  <div class="course-title">CS50's Introduction to AI with Python</div>
-                  <span class="course-status in-progress">In Progress</span>
+                  <div class="course-title">cs50 ai with python</div>
+                  <span class="course-status in-progress">in progress</span>
                 </div>
-                <div class="course-provider">Harvard / edX <span class="course-arrow">→</span></div>
+                <div class="course-provider">harvard / edx</div>
                 <div class="course-progress"><div class="course-progress-bar" style="width: 14.3%"></div></div>
               </a>
               <div class="course-notes">
-                <div class="notes-header">Notes & Implementations</div>
-                <div class="note-item">Exploring search algorithms (BFS, DFS, A*) for pathfinding problems</div>
-                <div class="note-item">Building game-playing AI with minimax and alpha-beta pruning</div>
+                <div class="notes-header">notes</div>
+                <div class="note-item">search algorithms (bfs, dfs, a*) for pathfinding</div>
+                <div class="note-item">game-playing ai with minimax</div>
                 <div class="tech-learned">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Search</span>
-                  <span class="tech-tag">Knowledge</span>
+                  <span class="tag">python</span>
+                  <span class="tag">search</span>
+                  <span class="tag">knowledge</span>
                 </div>
               </div>
             </div>
@@ -905,20 +817,20 @@
             <div class="course-item">
               <a href="https://www.coursera.org/learn/machine-learning" target="_blank" class="course-card">
                 <div class="course-header">
-                  <div class="course-title">Machine Learning Specialization</div>
-                  <span class="course-status in-progress">In Progress</span>
+                  <div class="course-title">machine learning</div>
+                  <span class="course-status in-progress">in progress</span>
                 </div>
-                <div class="course-provider">Stanford / Coursera <span class="course-arrow">→</span></div>
+                <div class="course-provider">stanford / coursera</div>
                 <div class="course-progress"><div class="course-progress-bar" style="width: 13%"></div></div>
               </a>
               <div class="course-notes">
-                <div class="notes-header">Notes & Implementations</div>
-                <div class="note-item">Understanding supervised learning: regression and classification</div>
-                <div class="note-item">Implementing gradient descent from scratch</div>
+                <div class="notes-header">notes</div>
+                <div class="note-item">supervised learning: regression and classification</div>
+                <div class="note-item">implementing gradient descent from scratch</div>
                 <div class="tech-learned">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">NumPy</span>
-                  <span class="tech-tag">Scikit-learn</span>
+                  <span class="tag">python</span>
+                  <span class="tag">numpy</span>
+                  <span class="tag">scikit-learn</span>
                 </div>
               </div>
             </div>
@@ -926,20 +838,19 @@
             <div class="course-item">
               <a href="https://www.coursera.org/learn/computational-neuroscience" target="_blank" class="course-card">
                 <div class="course-header">
-                  <div class="course-title">Computational Neuroscience</div>
-                  <span class="course-status in-progress">In Progress</span>
+                  <div class="course-title">computational neuroscience</div>
+                  <span class="course-status in-progress">in progress</span>
                 </div>
-                <div class="course-provider">University of Washington / Coursera <span class="course-arrow">→</span></div>
+                <div class="course-provider">university of washington / coursera</div>
                 <div class="course-progress"><div class="course-progress-bar" style="width: 23%"></div></div>
               </a>
               <div class="course-notes">
-                <div class="notes-header">Notes & Implementations</div>
-                <div class="note-item">Modeling neural encoding and decoding</div>
-                <div class="note-item">Exploring how the brain processes information</div>
+                <div class="notes-header">notes</div>
+                <div class="note-item">modeling neural encoding and decoding</div>
+                <div class="note-item">exploring how the brain processes information</div>
                 <div class="tech-learned">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">MATLAB</span>
-                  <span class="tech-tag">Neuroscience</span>
+                  <span class="tag">python</span>
+                  <span class="tag">matlab</span>
                 </div>
               </div>
             </div>
@@ -947,23 +858,22 @@
             <div class="course-item">
               <a href="https://coursera.org/verify/TFHXZGEBKEVV" target="_blank" class="course-card">
                 <div class="course-header">
-                  <div class="course-title">AI For Everyone</div>
-                  <span class="course-status completed">Completed</span>
+                  <div class="course-title">ai for everyone</div>
+                  <span class="course-status completed">completed</span>
                 </div>
-                <div class="course-provider">DeepLearning.AI / Coursera <span class="course-arrow">→</span></div>
+                <div class="course-provider">deeplearning.ai / coursera</div>
                 <div class="course-progress"><div class="course-progress-bar" style="width: 100%"></div></div>
                 <div class="course-certificate">
                   <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~TFHXZGEBKEVV/CERTIFICATE_LANDING_PAGE~TFHXZGEBKEVV.jpeg" alt="AI For Everyone Certificate" />
                 </div>
               </a>
               <div class="course-notes">
-                <div class="notes-header">Notes & Takeaways</div>
-                <div class="note-item">Understanding AI terminology and capabilities for business applications</div>
-                <div class="note-item">Learning to build AI strategy and navigate ethical considerations</div>
+                <div class="notes-header">takeaways</div>
+                <div class="note-item">ai terminology and capabilities for business</div>
+                <div class="note-item">building ai strategy and ethical considerations</div>
                 <div class="tech-learned">
-                  <span class="tech-tag">AI Strategy</span>
-                  <span class="tech-tag">Machine Learning</span>
-                  <span class="tech-tag">Business</span>
+                  <span class="tag">ai strategy</span>
+                  <span class="tag">business</span>
                 </div>
               </div>
             </div>
@@ -971,43 +881,43 @@
             <div class="course-item">
               <a href="https://coursera.org/verify/6VFEWH5UN9G5" target="_blank" class="course-card">
                 <div class="course-header">
-                  <div class="course-title">Learning How to Learn</div>
-                  <span class="course-status completed">Completed</span>
+                  <div class="course-title">learning how to learn</div>
+                  <span class="course-status completed">completed</span>
                 </div>
-                <div class="course-provider">Deep Teaching Solutions / Coursera <span class="course-arrow">→</span></div>
+                <div class="course-provider">deep teaching solutions / coursera</div>
                 <div class="course-progress"><div class="course-progress-bar" style="width: 100%"></div></div>
                 <div class="course-certificate">
                   <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~6VFEWH5UN9G5/CERTIFICATE_LANDING_PAGE~6VFEWH5UN9G5.jpeg" alt="Learning How to Learn Certificate" />
                 </div>
               </a>
               <div class="course-notes">
-                <div class="notes-header">Notes & Takeaways</div>
-                <div class="note-item">Mastering focused and diffuse modes of thinking for better learning</div>
-                <div class="note-item">Techniques like chunking, spaced repetition, and defeating procrastination</div>
+                <div class="notes-header">takeaways</div>
+                <div class="note-item">focused and diffuse modes of thinking</div>
+                <div class="note-item">chunking, spaced repetition, defeating procrastination</div>
                 <div class="tech-learned">
-                  <span class="tech-tag">Metacognition</span>
-                  <span class="tech-tag">Memory</span>
-                  <span class="tech-tag">Productivity</span>
+                  <span class="tag">metacognition</span>
+                  <span class="tag">memory</span>
                 </div>
               </div>
             </div>
 
           </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="container">
-          <h2>Contact</h2>
-          <div class="contact-links">
-            <a href="mailto:yessimkhan.seidikarim@gmail.com">yessimkhan.seidikarim@gmail.com</a>
-            <a href="https://linkedin.com/in/yessimkhan" target="_blank">linkedin.com/in/yessimkhan</a>
-            <a href="https://github.com/yesimbatya" target="_blank">github.com/yesimbatya</a>
-          </div>
-          <p class="location">Vancouver, BC</p>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <span class="location">vancouver, bc</span>
+          <div class="footer-links">
+            <a href="mailto:yessimkhan.seidikarim@gmail.com">email</a>
+            <a href="https://linkedin.com/in/yessimkhan" target="_blank">linkedin</a>
+            <a href="https://github.com/yesimbatya" target="_blank">github</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script>
       function scrollToSection(id) {
@@ -1018,7 +928,7 @@
         document.body.classList.toggle("dark-mode");
         const button = document.querySelector(".theme-toggle");
         const isDark = document.body.classList.contains("dark-mode");
-        button.textContent = isDark ? "○" : "●";
+        button.textContent = isDark ? "light" : "dark";
         localStorage.setItem("theme", isDark ? "dark" : "light");
       }
 
@@ -1026,7 +936,7 @@
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme === "light") {
           document.body.classList.remove("dark-mode");
-          document.querySelector(".theme-toggle").textContent = "●";
+          document.querySelector(".theme-toggle").textContent = "dark";
         }
       });
     </script>
