@@ -37,7 +37,6 @@
         padding: 0 2rem;
       }
 
-      /* Navigation - reysu inspired */
       nav {
         padding: 1.5rem 0;
         border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -72,11 +71,14 @@
         color: #666;
         text-decoration: none;
         font-size: 0.8rem;
-        cursor: pointer;
         transition: color 0.2s;
       }
 
       .nav-links a:hover {
+        color: #111;
+      }
+
+      .nav-links a.active {
         color: #111;
         text-decoration: underline;
       }
@@ -85,7 +87,8 @@
         color: #777;
       }
 
-      body.dark-mode .nav-links a:hover {
+      body.dark-mode .nav-links a:hover,
+      body.dark-mode .nav-links a.active {
         color: #e5e5e5;
       }
 
@@ -111,7 +114,6 @@
         color: #e5e5e5;
       }
 
-      /* ASCII Header */
       .ascii-header {
         padding: 4rem 0 2rem;
         text-align: center;
@@ -136,16 +138,10 @@
         }
       }
 
-      /* Main content */
       main {
         padding: 2rem 0 6rem;
       }
 
-      section {
-        padding: 3rem 0;
-      }
-
-      /* Hero - casual intro */
       .hero {
         padding: 2rem 0 4rem;
       }
@@ -199,7 +195,6 @@
         color: #e5e5e5;
       }
 
-      /* Section Headers */
       h2 {
         font-size: 0.75rem;
         font-weight: 500;
@@ -223,99 +218,10 @@
         background: rgba(255,255,255,0.08);
       }
 
-      /* Experience - table style */
-      .exp-table {
-        width: 100%;
-        border-collapse: collapse;
+      .skills-section {
+        padding: 3rem 0;
       }
 
-      .exp-row {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 1rem;
-        padding: 1rem 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        align-items: baseline;
-      }
-
-      body.dark-mode .exp-row {
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-      }
-
-      .exp-row:last-child {
-        border-bottom: none;
-      }
-
-      .exp-title {
-        font-size: 0.95rem;
-      }
-
-      .exp-meta {
-        font-size: 0.8rem;
-        color: #888;
-        margin-top: 0.25rem;
-      }
-
-      .exp-date {
-        font-size: 0.8rem;
-        color: #888;
-        text-align: right;
-        white-space: nowrap;
-      }
-
-      /* Projects - simple list */
-      .project-item {
-        padding: 1.25rem 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-      }
-
-      body.dark-mode .project-item {
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-      }
-
-      .project-item:last-child {
-        border-bottom: none;
-      }
-
-      .project-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 0.5rem;
-      }
-
-      .project-title {
-        font-size: 0.95rem;
-      }
-
-      .project-date {
-        font-size: 0.8rem;
-        color: #888;
-      }
-
-      .project-desc {
-        font-size: 0.9rem;
-        color: #555;
-        margin-bottom: 0.75rem;
-      }
-
-      body.dark-mode .project-desc {
-        color: #999;
-      }
-
-      .tags {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-      }
-
-      .tag {
-        font-size: 0.7rem;
-        color: #888;
-        text-transform: lowercase;
-      }
-
-      /* Skills - table with progress bars */
       .skills-table {
         width: 100%;
       }
@@ -348,184 +254,6 @@
         color: #666;
       }
 
-      /* Learning Section */
-      .learning-grid {
-        display: grid;
-        gap: 1.5rem;
-      }
-
-      .course-card {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        padding: 1.25rem;
-        background: rgba(0,0,0,0.02);
-        transition: all 0.2s ease;
-      }
-
-      .course-card:hover {
-        background: rgba(0,0,0,0.04);
-      }
-
-      body.dark-mode .course-card {
-        background: rgba(255,255,255,0.02);
-      }
-
-      body.dark-mode .course-card:hover {
-        background: rgba(255,255,255,0.04);
-      }
-
-      .course-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 0.5rem;
-        gap: 0.5rem;
-      }
-
-      .course-title {
-        font-size: 0.95rem;
-      }
-
-      .course-status {
-        font-size: 0.65rem;
-        text-transform: lowercase;
-        padding: 0.2rem 0.4rem;
-        background: rgba(0,0,0,0.05);
-        color: #666;
-      }
-
-      .course-status.in-progress {
-        background: rgba(45, 138, 78, 0.1);
-        color: #2d8a4e;
-      }
-
-      .course-status.completed {
-        background: rgba(45, 138, 78, 0.15);
-        color: #2d8a4e;
-      }
-
-      body.dark-mode .course-status {
-        background: rgba(255,255,255,0.05);
-        color: #888;
-      }
-
-      body.dark-mode .course-status.in-progress,
-      body.dark-mode .course-status.completed {
-        background: rgba(74, 222, 128, 0.1);
-        color: #4ade80;
-      }
-
-      .course-provider {
-        font-size: 0.8rem;
-        color: #888;
-        margin-bottom: 0.75rem;
-      }
-
-      .course-progress {
-        height: 2px;
-        background: rgba(0,0,0,0.06);
-        width: 100%;
-        overflow: hidden;
-      }
-
-      body.dark-mode .course-progress {
-        background: rgba(255,255,255,0.06);
-      }
-
-      .course-progress-bar {
-        height: 100%;
-        background: #2d8a4e;
-      }
-
-      body.dark-mode .course-progress-bar {
-        background: #4ade80;
-      }
-
-      .course-certificate {
-        margin-top: 1rem;
-        overflow: hidden;
-      }
-
-      .course-certificate img {
-        width: 100%;
-        height: auto;
-        display: block;
-        filter: grayscale(20%);
-        opacity: 0.9;
-        transition: all 0.2s ease;
-      }
-
-      .course-card:hover .course-certificate img {
-        filter: grayscale(0%);
-        opacity: 1;
-      }
-
-      body.dark-mode .course-certificate img {
-        filter: grayscale(30%) brightness(0.9);
-        opacity: 0.85;
-      }
-
-      body.dark-mode .course-card:hover .course-certificate img {
-        filter: grayscale(0%) brightness(1);
-        opacity: 1;
-      }
-
-      .course-notes {
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px solid rgba(0,0,0,0.05);
-      }
-
-      body.dark-mode .course-notes {
-        border-top-color: rgba(255,255,255,0.05);
-      }
-
-      .notes-header {
-        font-size: 0.7rem;
-        text-transform: lowercase;
-        margin-bottom: 0.75rem;
-        color: #888;
-      }
-
-      .note-item {
-        font-size: 0.85rem;
-        color: #555;
-        margin-bottom: 0.5rem;
-        padding-left: 1rem;
-        position: relative;
-      }
-
-      .note-item::before {
-        content: '>';
-        position: absolute;
-        left: 0;
-        color: #aaa;
-        font-family: monospace;
-      }
-
-      body.dark-mode .note-item {
-        color: #999;
-      }
-
-      .tech-learned {
-        display: flex;
-        gap: 0.4rem;
-        flex-wrap: wrap;
-        margin-top: 0.75rem;
-      }
-
-      .tech-learned .tag {
-        background: rgba(0,0,0,0.04);
-        padding: 0.15rem 0.4rem;
-        font-size: 0.65rem;
-      }
-
-      body.dark-mode .tech-learned .tag {
-        background: rgba(255,255,255,0.04);
-      }
-
-      /* Footer */
       footer {
         padding: 3rem 0;
         border-top: 1px solid rgba(0,0,0,0.06);
@@ -566,7 +294,6 @@
         color: #e5e5e5;
       }
 
-      /* Mobile */
       @media (max-width: 768px) {
         h1 {
           font-size: 1.25rem;
@@ -588,15 +315,6 @@
           grid-template-columns: 100px 1fr;
         }
 
-        .exp-row {
-          grid-template-columns: 1fr;
-          gap: 0.25rem;
-        }
-
-        .exp-date {
-          text-align: left;
-        }
-
         .footer-content {
           flex-direction: column;
           gap: 1rem;
@@ -608,12 +326,12 @@
   <body class="dark-mode">
     <nav>
       <div class="container">
-        <a href="#" class="nav-logo">yessimkhan</a>
+        <a href="index.html" class="nav-logo">yessimkhan</a>
         <ul class="nav-links">
-          <li><a onclick="scrollToSection('about')">about</a></li>
-          <li><a onclick="scrollToSection('experience')">experience</a></li>
-          <li><a onclick="scrollToSection('projects')">projects</a></li>
-          <li><a onclick="scrollToSection('learning')">learning</a></li>
+          <li><a href="index.html" class="active">about</a></li>
+          <li><a href="experience.html">experience</a></li>
+          <li><a href="projects.html">projects</a></li>
+          <li><a href="learning.html">learning</a></li>
         </ul>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
           light
@@ -634,7 +352,7 @@
 
     <main>
       <div class="container">
-        <section id="about" class="hero">
+        <section class="hero">
           <p class="greeting">bcom computer science & business @ ubc</p>
           <h1>building at the intersection of business and technology</h1>
           <p class="bio">
@@ -649,95 +367,7 @@
           </div>
         </section>
 
-        <section id="experience">
-          <h2>experience</h2>
-
-          <div class="exp-row">
-            <div>
-              <div class="exp-title">credit analysis intern</div>
-              <div class="exp-meta">bank of development, astana</div>
-            </div>
-            <div class="exp-date">jun – aug 2025</div>
-          </div>
-
-          <div class="exp-row">
-            <div>
-              <div class="exp-title">it intern</div>
-              <div class="exp-meta">viterra kazakhstan, astana</div>
-            </div>
-            <div class="exp-date">may – jun 2025</div>
-          </div>
-
-          <div class="exp-row">
-            <div>
-              <div class="exp-title">full stack development apprentice</div>
-              <div class="exp-meta">nfactorial, almaty · 2.7% acceptance rate</div>
-            </div>
-            <div class="exp-date">jun – aug 2024</div>
-          </div>
-
-          <div class="exp-row">
-            <div>
-              <div class="exp-title">assistant to director of growth</div>
-              <div class="exp-meta">health project, astana</div>
-            </div>
-            <div class="exp-date">jun – sep 2022</div>
-          </div>
-        </section>
-
-        <section id="projects">
-          <h2>projects</h2>
-
-          <div class="project-item">
-            <div class="project-header">
-              <span class="project-title">productivity timer</span>
-              <span class="project-date">2024</span>
-            </div>
-            <p class="project-desc">
-              productivity tracking application with data persistence and intuitive gui
-              featuring interactive charts for visualizing metrics.
-            </p>
-            <div class="tags">
-              <span class="tag">java</span>
-              <span class="tag">swing</span>
-              <span class="tag">junit</span>
-            </div>
-          </div>
-
-          <div class="project-item">
-            <div class="project-header">
-              <span class="project-title">finova ai</span>
-              <span class="project-date">2024</span>
-            </div>
-            <p class="project-desc">
-              ai-powered financial assistant with 40% database performance improvement
-              through advanced indexing. reduced unauthorized access by 95%.
-            </p>
-            <div class="tags">
-              <span class="tag">express</span>
-              <span class="tag">react</span>
-              <span class="tag">mongodb</span>
-              <span class="tag">postgresql</span>
-            </div>
-          </div>
-
-          <div class="project-item">
-            <div class="project-header">
-              <span class="project-title">trading analysis group</span>
-              <span class="project-date">2020 – 2021</span>
-            </div>
-            <p class="project-desc">
-              generated $6,000 revenue in 6 months. achieved 40% monthly membership growth
-              through data-driven ad campaign optimization.
-            </p>
-            <div class="tags">
-              <span class="tag">market research</span>
-              <span class="tag">statistical analysis</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="skills">
+        <section class="skills-section">
           <h2>skills</h2>
 
           <div class="skills-table">
@@ -767,142 +397,6 @@
             </div>
           </div>
         </section>
-
-        <section id="learning">
-          <h2>learning</h2>
-          <div class="learning-grid">
-
-            <div class="course-item">
-              <a href="https://quantecon.org/" target="_blank" class="course-card">
-                <div class="course-header">
-                  <div class="course-title">quantitative economics</div>
-                  <span class="course-status in-progress">in progress</span>
-                </div>
-                <div class="course-provider">quantecon</div>
-                <div class="course-progress"><div class="course-progress-bar" style="width: 15%"></div></div>
-              </a>
-              <div class="course-notes">
-                <div class="notes-header">notes</div>
-                <div class="note-item">economic modeling, statistical analysis, and machine learning</div>
-                <div class="note-item">data cleaning on large economic datasets</div>
-                <div class="tech-learned">
-                  <span class="tag">python</span>
-                  <span class="tag">pandas</span>
-                  <span class="tag">numpy</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item">
-              <a href="https://cs50.harvard.edu/ai/" target="_blank" class="course-card">
-                <div class="course-header">
-                  <div class="course-title">cs50 ai with python</div>
-                  <span class="course-status in-progress">in progress</span>
-                </div>
-                <div class="course-provider">harvard / edx</div>
-                <div class="course-progress"><div class="course-progress-bar" style="width: 14.3%"></div></div>
-              </a>
-              <div class="course-notes">
-                <div class="notes-header">notes</div>
-                <div class="note-item">search algorithms (bfs, dfs, a*) for pathfinding</div>
-                <div class="note-item">game-playing ai with minimax</div>
-                <div class="tech-learned">
-                  <span class="tag">python</span>
-                  <span class="tag">search</span>
-                  <span class="tag">knowledge</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item">
-              <a href="https://www.coursera.org/learn/machine-learning" target="_blank" class="course-card">
-                <div class="course-header">
-                  <div class="course-title">machine learning</div>
-                  <span class="course-status in-progress">in progress</span>
-                </div>
-                <div class="course-provider">stanford / coursera</div>
-                <div class="course-progress"><div class="course-progress-bar" style="width: 13%"></div></div>
-              </a>
-              <div class="course-notes">
-                <div class="notes-header">notes</div>
-                <div class="note-item">supervised learning: regression and classification</div>
-                <div class="note-item">implementing gradient descent from scratch</div>
-                <div class="tech-learned">
-                  <span class="tag">python</span>
-                  <span class="tag">numpy</span>
-                  <span class="tag">scikit-learn</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item">
-              <a href="https://www.coursera.org/learn/computational-neuroscience" target="_blank" class="course-card">
-                <div class="course-header">
-                  <div class="course-title">computational neuroscience</div>
-                  <span class="course-status in-progress">in progress</span>
-                </div>
-                <div class="course-provider">university of washington / coursera</div>
-                <div class="course-progress"><div class="course-progress-bar" style="width: 23%"></div></div>
-              </a>
-              <div class="course-notes">
-                <div class="notes-header">notes</div>
-                <div class="note-item">modeling neural encoding and decoding</div>
-                <div class="note-item">exploring how the brain processes information</div>
-                <div class="tech-learned">
-                  <span class="tag">python</span>
-                  <span class="tag">matlab</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item">
-              <a href="https://coursera.org/verify/TFHXZGEBKEVV" target="_blank" class="course-card">
-                <div class="course-header">
-                  <div class="course-title">ai for everyone</div>
-                  <span class="course-status completed">completed</span>
-                </div>
-                <div class="course-provider">deeplearning.ai / coursera</div>
-                <div class="course-progress"><div class="course-progress-bar" style="width: 100%"></div></div>
-                <div class="course-certificate">
-                  <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~TFHXZGEBKEVV/CERTIFICATE_LANDING_PAGE~TFHXZGEBKEVV.jpeg" alt="AI For Everyone Certificate" />
-                </div>
-              </a>
-              <div class="course-notes">
-                <div class="notes-header">takeaways</div>
-                <div class="note-item">ai terminology and capabilities for business</div>
-                <div class="note-item">building ai strategy and ethical considerations</div>
-                <div class="tech-learned">
-                  <span class="tag">ai strategy</span>
-                  <span class="tag">business</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="course-item">
-              <a href="https://coursera.org/verify/6VFEWH5UN9G5" target="_blank" class="course-card">
-                <div class="course-header">
-                  <div class="course-title">learning how to learn</div>
-                  <span class="course-status completed">completed</span>
-                </div>
-                <div class="course-provider">deep teaching solutions / coursera</div>
-                <div class="course-progress"><div class="course-progress-bar" style="width: 100%"></div></div>
-                <div class="course-certificate">
-                  <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~6VFEWH5UN9G5/CERTIFICATE_LANDING_PAGE~6VFEWH5UN9G5.jpeg" alt="Learning How to Learn Certificate" />
-                </div>
-              </a>
-              <div class="course-notes">
-                <div class="notes-header">takeaways</div>
-                <div class="note-item">focused and diffuse modes of thinking</div>
-                <div class="note-item">chunking, spaced repetition, defeating procrastination</div>
-                <div class="tech-learned">
-                  <span class="tag">metacognition</span>
-                  <span class="tag">memory</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
       </div>
     </main>
 
@@ -920,10 +414,6 @@
     </footer>
 
     <script>
-      function scrollToSection(id) {
-        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-      }
-
       function toggleTheme() {
         document.body.classList.toggle("dark-mode");
         const button = document.querySelector(".theme-toggle");
